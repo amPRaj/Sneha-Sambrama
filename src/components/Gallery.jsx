@@ -10,6 +10,7 @@ const galleryImages = {
     { src: '/assets/img/king2.jpeg', alt: 'Special Event 2' },
     { src: '/assets/img/king3.jpeg', alt: 'Special Event 3' },
     { src: '/assets/img/mike.jpeg', alt: 'Special Event 4' },
+    { src: '/assets/img/sir.jpeg', alt: 'Special Event 5' },
   ],
   community: [
     { src: '/assets/img/camp.jpeg', alt: 'Health Camp' },
@@ -19,20 +20,21 @@ const galleryImages = {
     { src: '/assets/img/c4.jpeg', alt: 'Community Event 2' },
     { src: '/assets/img/c5.jpeg', alt: 'Community Event 3' },
     { src: '/assets/img/c6.jpeg', alt: 'Community Event 4' },
-    { src: '/assets/img/c7.jpeg', alt: 'Community Event 5' },
+    { src: '/assets/img/girls.jpeg', alt: 'Community Event 5' },
   ],
   events: [
     { src: '/assets/img/stage1.jpeg', alt: 'Stage Event 1' },
     { src: '/assets/img/stage2.jpeg', alt: 'Stage Event 2' },
     { src: '/assets/img/stage3.jpeg', alt: 'Stage Event 3' },
     { src: '/assets/img/stage4.jpeg', alt: 'Stage Event 4' },
+    { src: '/assets/img/price.jpeg', alt: 'Stage Event 5' },
   ]
 };
 
 function GalleryImage({ image, onClick }) {
   return (
     <div 
-      className="relative group cursor-pointer overflow-hidden rounded-xl mb-6 bg-white shadow-lg"
+      className="relative group cursor-pointer overflow-hidden rounded-lg sm:rounded-xl mb-4 sm:mb-6 bg-white shadow-lg"
       onClick={() => onClick(image)}
     >
       <div className="aspect-[4/3] relative">
@@ -71,24 +73,25 @@ export function Gallery() {
     <section
       id="gallery"
       aria-label="Our Gallery"
-      className="bg-slate-50 py-20 sm:py-32"
+      className="bg-slate-50 py-8 sm:py-20 lg:py-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900 font-bold">
             Our Gallery
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p className="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg tracking-tight text-slate-700">
             Capturing moments of impact and community engagement
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="mt-8 flex justify-center gap-4 flex-wrap">
+        <div className="mt-6 sm:mt-8 flex justify-center gap-2 sm:gap-4 flex-wrap px-4 sm:px-0">
           <Button
             variant={activeCategory === 'all' ? 'solid' : 'outline'}
             color="green"
             onClick={() => setActiveCategory('all')}
+            className="text-sm sm:text-base"
           >
             All
           </Button>
@@ -97,6 +100,7 @@ export function Gallery() {
             variant={activeCategory === 'community' ? 'solid' : 'outline'}
             color="green"
             onClick={() => setActiveCategory('community')}
+            className="text-sm sm:text-base"
           >
             Community & Health Camps
           </Button>
@@ -104,6 +108,7 @@ export function Gallery() {
             variant={activeCategory === 'events' ? 'solid' : 'outline'}
             color="green"
             onClick={() => setActiveCategory('events')}
+            className="text-sm sm:text-base"
           >
             Events
           </Button>
@@ -111,14 +116,15 @@ export function Gallery() {
             variant={activeCategory === 'special' ? 'solid' : 'outline'}
             color="green"
             onClick={() => setActiveCategory('special')}
+            className="text-sm sm:text-base"
           >
             Special Moments
           </Button>
         </div>
       </Container>
 
-      <div className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="mx-auto mt-8 sm:mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {visibleImages.map((image, index) => (
             <div key={index} className="w-full">
               <GalleryImage image={image} onClick={setSelectedImage} />
@@ -127,11 +133,12 @@ export function Gallery() {
         </div>
 
         {filteredImages.length > 8 && (
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-12 text-center">
             <Button 
               variant="solid" 
               color="green" 
               onClick={() => setShowAll(!showAll)}
+              className="text-sm sm:text-base"
             >
               {showAll ? 'Show Less' : 'Show More'}
             </Button>
@@ -155,10 +162,10 @@ export function Gallery() {
               priority
             />
             <button 
-              className="absolute top-4 right-4 text-white hover:text-emerald-500"
+              className="absolute top-2 sm:top-4 right-2 sm:right-4 text-white hover:text-emerald-500"
               onClick={() => setSelectedImage(null)}
             >
-              <Icon icon="mdi:close" className="w-8 h-8" />
+              <Icon icon="mdi:close" className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
           </div>
         </div>

@@ -5,6 +5,10 @@ const nextConfig = {
     scrollRestoration: true,
   },
   transpilePackages: ['react-tweet'],
+  images: {
+    domains: ['localhost'],
+    unoptimized: true,
+  },
   redirects: async () => {
     return [
       {

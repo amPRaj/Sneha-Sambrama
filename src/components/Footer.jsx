@@ -54,7 +54,7 @@ export function Footer() {
         <div className="py-8">
           {/* <div className="mx-auto h-10 w-auto flex items-center justify-center text-slate-900 font-bold text-2xl">
             Sneha Sambrama Foundation
-          </div> */}
+            </div> */}
           <div className="mt-5 text-center text-lg italic text-slate-700">
             <p>{`"${currentQuote.text}" - ${currentQuote.author}`}</p>
           </div>

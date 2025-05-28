@@ -67,12 +67,12 @@ export default function Home() {
         </div>
         <div id="about-us">
          
-          <CallToAction />
+        <CallToAction />
           <CommitteeMembers />
         </div>
         
         <div id="achievements">
-          <SecondaryFeatures />
+        <SecondaryFeatures />
           <Gallery />
         </div>
       

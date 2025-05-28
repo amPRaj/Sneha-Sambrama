@@ -27,7 +27,7 @@ export default function Donate() {
         <meta name="description" content="Support Sneha Sambrama Charity Foundation by making a donation." />
       </Head>
       <Header />
-      <main className="relative min-h-screen w-full flex items-center justify-center">
+      <main className="relative min-h-screen w-full flex items-center justify-center pt-24 md:pt-32">
         {/* Gradient Circles */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl" />
@@ -35,26 +35,32 @@ export default function Donate() {
           <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 px-4 py-20 sm:py-32 w-full max-w-7xl mx-auto">
-         
-         
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full max-w-7xl mx-auto">
           {/* Section 1: UPI Donation */}
-          <div className="mb-20 w-full py-16 bg-white/5 backdrop-blur-2xl rounded-lg overflow-hidden">
-            <h2 className="mb-8 text-center text-3xl font-semibold text-slate-900">Help Provide Food and Medicine</h2>
-            <div className="flex flex-col items-center justify-center gap-12 px-6">
-              <div className="w-full flex justify-center items-center">
-                <a href="upi://pay?pa=9113013283@ybl&pn=Sneha%20Sambrama&cu=INR" target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:scale-105">
+          <div className="mb-12 sm:mb-16 lg:mb-20 w-full py-8 sm:py-12 lg:py-16 bg-white/5 backdrop-blur-2xl rounded-lg overflow-hidden">
+            <h2 className="mb-6 sm:mb-8 text-center text-2xl sm:text-3xl font-semibold text-slate-900 px-4 sm:px-6">
+              Help Provide Food and Medicine
+            </h2>
+            <div className="flex flex-col items-center justify-center gap-8 sm:gap-12 px-4 sm:px-6 lg:px-8">
+              <div className="w-full max-w-[300px] sm:max-w-[400px] flex justify-center items-center">
+                <a 
+                  href="upi://pay?pa=9113013283@ybl&pn=Sneha%20Sambrama&cu=INR" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="transform transition-transform hover:scale-105 w-full"
+                >
                   <Image
                     src="/assets/img/QRCODE.jpeg"
                     alt="UPI QR Code for Donation"
                     width={400}
                     height={400}
-                    objectFit="contain"
-                    className="rounded-md"
+                    className="w-full h-auto rounded-md"
+                    priority
+                    unoptimized
                   />
                 </a>
               </div>
-              <div className="w-full text-slate-700 space-y-6 text-lg text-center">
+              <div className="w-full text-slate-700 space-y-4 sm:space-y-6 text-base sm:text-lg text-center max-w-2xl mx-auto">
                 <p className="leading-relaxed">
                   Scan the QR code below to make a quick and secure UPI payment. It's a simple way to make a big impact today!
                 </p>
@@ -63,21 +69,38 @@ export default function Donate() {
           </div>
 
           {/* Section 2: Bank Transfer */}
-          <div className="w-full py-16 bg-white/5 backdrop-blur-2xl rounded-lg overflow-hidden">
-            <h2 className="mb-8 text-center text-3xl font-semibold text-slate-900">For Larger Contributions (Bank Transfer)</h2>
-            <div className="text-slate-700 space-y-6 text-lg px-6">
-              <p className="leading-relaxed text-center">
+          <div className="w-full py-8 sm:py-12 lg:py-16 bg-white/5 backdrop-blur-2xl rounded-lg overflow-hidden">
+            <h2 className="mb-6 sm:mb-8 text-center text-2xl sm:text-3xl font-semibold text-slate-900 px-4 sm:px-6">
+              For Larger Contributions (Bank Transfer)
+            </h2>
+            <div className="text-slate-700 space-y-6 text-base sm:text-lg px-4 sm:px-6 lg:px-8">
+              <p className="leading-relaxed text-center max-w-2xl mx-auto">
                 Please use the bank details below for your transfer:
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-3xl mx-auto">
-                <div>
-                  <p><span className="font-semibold text-slate-900">Account Name:</span> Sneha Sambrama Charity Foundation</p>
-                  <p><span className="font-semibold text-slate-900">Account Number:</span> XXXXXXXXXXXXXX</p>
-                  <p><span className="font-semibold text-slate-900">IFSC Code:</span> YYYYYYYYYYY</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-8 max-w-3xl mx-auto">
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <span className="font-semibold text-slate-900 min-w-[140px]">Account Name:</span>
+                    <span>Sneha Sambrama Charity Foundation</span>
+                  </p>
+                  <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <span className="font-semibold text-slate-900 min-w-[140px]">Account Number:</span>
+                    <span>XXXXXXXXXXXXXX</span>
+                  </p>
+                  <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <span className="font-semibold text-slate-900 min-w-[140px]">IFSC Code:</span>
+                    <span>YYYYYYYYYYY</span>
+                  </p>
                 </div>
-                <div>
-                  <p><span className="font-semibold text-slate-900">Bank Name:</span> Your Bank Name</p>
-                  <p><span className="font-semibold text-slate-900">Branch Name:</span> Your Branch Name</p>
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <span className="font-semibold text-slate-900 min-w-[140px]">Bank Name:</span>
+                    <span>Your Bank Name</span>
+                  </p>
+                  <p className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <span className="font-semibold text-slate-900 min-w-[140px]">Branch Name:</span>
+                    <span>Your Branch Name</span>
+                  </p>
                 </div>
               </div>
             </div>

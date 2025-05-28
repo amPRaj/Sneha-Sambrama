@@ -124,11 +124,11 @@ export function Header() {
           <div className="flex items-center">
             <Link href="/" aria-label="Home">
               <Image
-                src="/assets/img/logos/logo.jpeg"
+                src="/assets/img/logos/logopng.png"
                 alt="Sneha Sambrama Charity Foundation Logo"
-                width={100}
-                height={100}
-                className="h-24 w-auto"
+                width={60}
+                height={60}
+                className="h-16 sm:h-24 w-auto"
                 priority
               />
             </Link>
@@ -159,7 +159,7 @@ export function Header() {
               <span className="sr-only">Sneha Sambrama Charity Foundation</span>
               <Image
                 className="h-8 w-auto"
-                src="/assets/img/logos/logo.jpeg"
+                src="/assets/img/logos/logopng.png"
                 alt=""
                 width={32}
                 height={32}

@@ -17,7 +17,7 @@ const waysToJoin = [
   {
     title: 'Volunteer With Us',
     description: 'Join our team of dedicated volunteers and make a difference in your community. Share your skills and time to help those in need.',
-  },
+    },
   // {
   //   title: 'Partner With Us',
   //   description: 'We welcome partnerships with organizations and businesses that share our vision of creating positive change in society.',
@@ -51,7 +51,7 @@ export function JoinUsAndContact() {
         {/* Add Contact Us heading at the top */}
         <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
           Contact Us
-        </h2>
+          </h2>
 
         {/* Increased max-w and added animated gradient border classes */}
         {/* Adjusted gradient colors for a more professional look */}
@@ -95,18 +95,17 @@ export function JoinUsAndContact() {
                     <div key={index}>
                       <h5 className="mb-2 text-lg font-semibold text-slate-900">{way.title}</h5>
                       <p className="text-slate-700">{way.description}</p>
-                    </div>
-                  ))}
+              </div>
+            ))}
                 </div>
               </div>
 
               {/* Donate Button */}
-              {/* Wrapped button with motion.div for animation */}
               <motion.div
-                whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(34,197,94)" }} // Subtle scale and glow on hover
+                whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(34,197,94)" }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="text-center md:text-left inline-block"
+                className="text-center"
               >
                 <Link href="/donate" passHref>
                   <Button

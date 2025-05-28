@@ -6,40 +6,55 @@ import { Icon } from '@iconify/react';
 
 export function CallToAction() {
   return (
-    <section id="about-us" className="relative overflow-hidden w-full py-32">
+    <section id="about-us" className="relative overflow-hidden w-full min-h-[200px] py-0 sm:py-24 lg:py-32">
       <BlurBG />
-      <Container className="relative w-4/5 mx-auto">
-        {/* Blurred Card Background */}
-        {/* <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl transform transition-all duration-500 hover:scale-[1.02] hover:bg-white/10"> */}
+      <div className="w-full h-full">
+        <Container className="relative w-full sm:w-4/5 mx-auto">
           {/* Animated Gradient Border */}
-          <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-white-400/50 via-green-900/50 to-teal-900/50 animate-gradient-x">
-            <div className="absolute inset-0 rounded-4xl bg-gradient-to-r from-white-400/50 via-green-900/50 to-teal-900/50 animate-gradient-x blur-xl" />
+          <div className="absolute inset-0 rounded-none sm:rounded-3xl p-[2px] bg-gradient-to-r from-white-400/50 via-green-900/50 to-teal-900/50 animate-gradient-x">
+            <div className="absolute inset-0 rounded-none sm:rounded-4xl bg-gradient-to-r from-white-400/50 via-green-900/50 to-teal-900/50 animate-gradient-x blur-xl" />
           </div>
           
           {/* Content Container */}
-          <div className="relative p-8 md:p-12">
+          <div className="relative p-4 sm:p-6 md:p-8 lg:p-12">
             <div className="mx-auto max-w-6xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left side - Logo */}
-                <div className="relative">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 items-center">
+                {/* Left side - Logo (hidden on mobile) */}
+                <div className="relative order-2 lg:order-1 hidden lg:block">
                   <div className="relative w-full aspect-square flex items-center justify-center">
                     <Image
                       src="/assets/img/logos/logopng.png"
                       alt="Sneha Sambrama Logo"
-                      width={600}
-                      height={600}
-                      className="w-96 h-96 object-contain"
+                      width={800}
+                      height={800}
+                      className="w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto object-contain"
+                      priority
                     />
                   </div>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="text-white">
-                  <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-8">
-                    About Us
-                  </h2>
+                <div className="text-white order-1 lg:order-2">
+                  <div className="flex flex-col lg:block">
+                    <div className="flex items-center gap-4 mb-6 lg:mb-4 lg:hidden">
+                      <Image
+                        src="/assets/img/logos/logopng.png"
+                        alt="Sneha Sambrama Logo"
+                        width={120}
+                        height={120}
+                        className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
+                        priority
+                      />
+                      <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
+                        About Us
+                      </h2>
+                    </div>
+                    <h2 className="hidden lg:block font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 lg:mb-8">
+                      About Us
+                    </h2>
+                  </div>
                   
-                  <div className="space-y-6 text-lg tracking-tight text-white/90">
+                  <div className="space-y-4 sm:space-y-6 text-base sm:text-lg md:text-xl tracking-tight text-white/90">
                     <p className="leading-relaxed">
                       Sneha Sambrama Charity Foundation (R.), Bhanuvalli is built on the values of selfless service and community care. Established in 20XX, our foundation has been actively involved in empowering underprivileged children with education, healthcare support, food distribution, and various social welfare activities.
                     </p>
@@ -48,20 +63,28 @@ export function CallToAction() {
                     </p>
                   </div>
 
-                  <div className="mt-10 flex flex-wrap gap-4">
-                    <Button href="/donate" color="white" className="transform hover:scale-105 transition-transform">
+                  <div className="mt-0 sm:mt-8 lg:mt-10 flex flex-col items-center gap-3 sm:gap-4">
+                    {/* <Button 
+                      href="/donate" 
+                      color="white" 
+                      className="hidden sm:inline-flex w-full sm:w-auto transform hover:scale-105 transition-transform"
+                    >
                       Donate Now
-                    </Button>
-                    <Button href="/volunteer" variant="outline" className="transform hover:scale-105 transition-transform">
+                    </Button> */}
+                    {/* <Button 
+                      href="/volunteer" 
+                      variant="outline" 
+                      className="hidden sm:inline-flex w-full sm:w-auto transform hover:scale-105 transition-transform"
+                    >
                       Join as Volunteer
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        {/* </div> */}
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 }
