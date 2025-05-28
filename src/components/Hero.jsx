@@ -92,7 +92,7 @@ export function Hero() {
           <Button 
             variant="outline" 
             href="/about"
-            className="w-full sm:w-auto transform hover:scale-105 transition-transform"
+            className="hidden sm:inline-flex w-full sm:w-auto transform hover:scale-105 transition-transform"
           >
             <Icon icon="mdi:information-outline" className="h-5 w-5" />
             <span className="ml-2">About Us</span>
