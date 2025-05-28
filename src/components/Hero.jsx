@@ -9,7 +9,7 @@ import faqsBackgroundImage from '@/images/background-faqs.jpg';
 
 export function Hero() {
   return (
-    <section className="relative py-32 overflow-hidden bg-slate-50 h-screen flex items-center">
+    <section className="relative py-16 sm:py-32 overflow-hidden bg-slate-50 min-h-screen flex items-center">
       {/* Add the background image from Faqs */}
       <Image
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-none"
@@ -20,15 +20,15 @@ export function Hero() {
         unoptimized
       />
 
-      <Container className="relative text-center">
+      <Container className="relative text-center px-4 sm:px-6">
         <motion.h1 
-          className="mx-auto font-display text-6xl font-bold tracking-tight text-slate-900 sm:text-7xl"
+          className="mx-auto font-display text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 sm:text-7xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.span 
-            className="block"
+            className="block text-3xl sm:text-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -36,21 +36,21 @@ export function Hero() {
             Welcome to
           </motion.span>
           <motion.span 
-            className="relative inline-block mt-4 text-emerald-600"
+            className="relative inline-block mt-2 sm:mt-4 text-emerald-600 text-4xl sm:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Sneha Sambrama
             <motion.div 
-              className="absolute -bottom-2 left-0 w-full h-1 bg-emerald-600"
+              className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-emerald-600"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             />
           </motion.span>
           <motion.span 
-            className="block mt-4"
+            className="block mt-2 sm:mt-4 text-3xl sm:text-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -58,7 +58,7 @@ export function Hero() {
             Charity Foundation (R.)
           </motion.span>
           <motion.span 
-            className="block text-2xl mt-4"
+            className="block text-xl sm:text-2xl mt-2 sm:mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -68,7 +68,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.div 
-          className="mx-auto mt-12 max-w-2xl text-lg tracking-tight text-slate-700"
+          className="mx-auto mt-6 sm:mt-12 max-w-2xl text-base sm:text-lg tracking-tight text-slate-700"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -81,18 +81,18 @@ export function Hero() {
         </motion.div>
 
         <motion.div 
-          className="mt-12 flex justify-center gap-x-8"
+          className="mt-6 sm:mt-12 flex flex-col sm:flex-row justify-center gap-4 sm:gap-x-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <Button href="/donate" className="transform hover:scale-105 transition-transform">
+          <Button href="/donate" className="w-full sm:w-auto transform hover:scale-105 transition-transform">
             Donate Now
           </Button>
           <Button 
             variant="outline" 
             href="/about"
-            className="transform hover:scale-105 transition-transform"
+            className="w-full sm:w-auto transform hover:scale-105 transition-transform"
           >
             <Icon icon="mdi:information-outline" className="h-5 w-5" />
             <span className="ml-2">About Us</span>

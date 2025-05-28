@@ -6,10 +6,10 @@ import { Icon } from '@iconify/react';
 
 export function CallToAction() {
   return (
-    <section id="about-us" className="relative overflow-hidden w-full min-h-[200px] py-0 sm:py-24 lg:py-32">
+    <section id="about-us" className="relative overflow-hidden w-full min-h-[200px] py-8 sm:py-24 lg:py-32">
       <BlurBG />
       <div className="w-full h-full">
-        <Container className="relative w-full sm:w-4/5 mx-auto">
+        <Container className="relative w-full sm:w-4/5 mx-auto px-4 sm:px-6">
           {/* Animated Gradient Border */}
           <div className="absolute inset-0 rounded-none sm:rounded-3xl p-[2px] bg-gradient-to-r from-white-400/50 via-green-900/50 to-teal-900/50 animate-gradient-x">
             <div className="absolute inset-0 rounded-none sm:rounded-4xl bg-gradient-to-r from-white-400/50 via-green-900/50 to-teal-900/50 animate-gradient-x blur-xl" />
@@ -36,16 +36,16 @@ export function CallToAction() {
                 {/* Right side - Content */}
                 <div className="text-white order-1 lg:order-2">
                   <div className="flex flex-col lg:block">
-                    <div className="flex items-center gap-4 mb-6 lg:mb-4 lg:hidden">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 lg:mb-4 lg:hidden">
                       <Image
                         src="/assets/img/logos/logopng.png"
                         alt="Sneha Sambrama Logo"
                         width={120}
                         height={120}
-                        className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
+                        className="w-20 h-20 sm:w-32 sm:h-32 object-contain"
                         priority
                       />
-                      <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
+                      <h2 className="font-display text-xl sm:text-3xl font-bold tracking-tight">
                         About Us
                       </h2>
                     </div>
@@ -54,7 +54,7 @@ export function CallToAction() {
                     </h2>
                   </div>
                   
-                  <div className="space-y-4 sm:space-y-6 text-base sm:text-lg md:text-xl tracking-tight text-white/90">
+                  <div className="space-y-3 sm:space-y-6 text-sm sm:text-lg md:text-xl tracking-tight text-white/90">
                     <p className="leading-relaxed">
                       Sneha Sambrama Charity Foundation (R.), Bhanuvalli is built on the values of selfless service and community care. Established in 20XX, our foundation has been actively involved in empowering underprivileged children with education, healthcare support, food distribution, and various social welfare activities.
                     </p>
@@ -63,7 +63,7 @@ export function CallToAction() {
                     </p>
                   </div>
 
-                  <div className="mt-0 sm:mt-8 lg:mt-10 flex flex-col items-center gap-3 sm:gap-4">
+                  <div className="mt-6 sm:mt-8 lg:mt-10 flex flex-col items-center gap-3 sm:gap-4">
                     {/* <Button 
                       href="/donate" 
                       color="white" 
