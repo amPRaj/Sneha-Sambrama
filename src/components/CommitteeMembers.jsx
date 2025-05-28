@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { motion } from 'framer-motion';
+import { Icon } from '@iconify/react';
 
 import faqsBackgroundImage from '@/images/background-faqs.jpg';
 
@@ -9,7 +10,7 @@ const members = [
   {
     name: 'Sri Tejasvi Kattimni T. R.',
     role: 'President',
-    image: '/assets/img/placeholder-president.jpg',
+    image: '/assets/img/tej.jpeg',
     description: 'Dedicated leader guiding the foundation\'s operations with efficiency and care.',
     social: {
       linkedin: '#',
@@ -19,7 +20,7 @@ const members = [
   {
     name: 'Sri Shivakumar H. M.',
     role: 'Vice President',
-    image: '/assets/img/placeholder-vice-president.jpg',
+    image: '/assets/img/sir.jpeg',
     description: 'Bringing valuable experience and support to the leadership team.',
     social: {
       linkedin: '#',
@@ -29,7 +30,7 @@ const members = [
   {
     name: 'Sri Ramanagouda D. B.',
     role: 'Secretary',
-    image: '/assets/img/placeholder-secretary.jpg',
+    image: '/assets/img/sir2.jpeg',
     description: 'Managing the foundation\'s operations with efficiency and care.',
     social: {
       linkedin: '#',
@@ -39,7 +40,7 @@ const members = [
   {
     name: 'Sri Pakkirappa Rangappa Basapura',
     role: 'Joint Secretary',
-    image: '/assets/img/placeholder-joint-secretary.jpg',
+    image: '/assets/img/king.jpeg',
     description: 'Assisting in administrative duties and supporting the team.',
     social: {
       linkedin: '#',
@@ -49,7 +50,7 @@ const members = [
   {
     name: 'Sri E. Vishwanathaih',
     role: 'Treasurer',
-    image: '/assets/img/placeholder-treasurer.jpg',
+    image: '/assets/img/king2.jpeg',
     description: 'Ensuring financial transparency and stability for the foundation.',
     social: {
       linkedin: '#',
@@ -72,34 +73,57 @@ function MemberCard({ member, index, className = '' }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative  overflow-hidden rounded-2xl bg-black/5 backdrop-blur-1xl">
-        <div className="aspect-[3/2] relative">
+      <div className="relative overflow-hidden rounded-2xl bg-black/5 backdrop-blur-1xl">
+        <div className="aspect-[4/6] relative">
           <Image
             src={member.image}
             alt={member.name}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
         
         <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
-          <h3 className="font-serif text-2xl font-bold text-slate-900 mb-1">{member.name}</h3>
-          <p className="font-serif text-lg font-medium text-amber-600 mb-2">{member.role}</p>
-          <p className="font-sans text-slate-700 text-sm mb-4">{member.description}</p>
+          <h3 className="font-serif text-2xl font-bold text-white mb-1 drop-shadow-lg">{member.name}</h3>
+          <p className="font-serif text-lg font-medium text-amber-400 mb-2 drop-shadow-lg">{member.role}</p>
+          <p className="font-sans text-white/90 text-sm mb-4 drop-shadow-lg">{member.description}</p>
           
           {!isLastThree && (
             <div className="flex gap-4">
-              <a href={member.social.linkedin} className="text-slate-700 hover:text-amber-600 transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-              <a href={member.social.twitter} className="text-slate-700 hover:text-amber-600 transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                </svg>
-              </a>
+              {member.social?.linkedin && (
+                <a
+                  href={member.social.linkedin}
+                  className="text-white hover:text-amber-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="sr-only">LinkedIn</span>
+                  <Icon icon="mdi:linkedin" className="h-6 w-6" />
+                </a>
+              )}
+              {member.social?.twitter && (
+                <a
+                  href={member.social.twitter}
+                  className="text-white hover:text-amber-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="sr-only">Twitter</span>
+                  <Icon icon="mdi:twitter" className="h-6 w-6" />
+                </a>
+              )}
+              {member.social?.instagram && (
+                <a
+                  href={member.social.instagram}
+                  className="text-white hover:text-amber-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="sr-only">Instagram</span>
+                  <Icon icon="mdi:instagram" className="h-6 w-6" />
+                </a>
+              )}
             </div>
           )}
         </div>
