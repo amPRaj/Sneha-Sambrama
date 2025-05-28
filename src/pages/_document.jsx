@@ -1,8 +1,8 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 
-const description = 'A dev-tool that aids faster and precise responsive web development.';
+
 const image = '/assets/img/responsively-image.png';
-const title = "Responsively App - A Web Developer's Browser";
+const title = "sneha sambrama charity foundation ";
 
 export default function Document(props) {
   let pageProps = props.__NEXT_DATA__?.props?.pageProps;
